@@ -1,0 +1,35 @@
+﻿<Page x:Class="LibraryDB.Pages.LibraryMain"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibraryDB.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="LibraryMain">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="GridLibrary" Grid.Row ="0" Grid.Column="0" Margin="10" SelectionChanged="GridLibrary_SelectionChanged"/>
+        <StackPanel Grid.Row ="0" Grid.Column ="1" Margin="10">
+            <Label Content ="Название" HorizontalContentAlignment="Center" />
+            <TextBox x:Name="NameLibrary"/>
+        </StackPanel>
+        <DockPanel Grid.Row ="1" Grid.Column ="1" DockPanel.Dock="Right" 
+            HorizontalAlignment="Stretch" 
+            VerticalAlignment="Stretch" 
+            Height="Auto" 
+            Margin="10">
+            <Button Name="Create" Content="Создать" Width="150" Click="Create_Click"/>
+            <Button Name="Update" Content="Изменить" Click="Update_Click"/>
+        </DockPanel>
+        <Button Grid.Column="0" Grid.Row="1" Name="Delete" Content="Удалить" Margin="10" Click="Delete_Click"/>
+    </Grid>
+</Page>
